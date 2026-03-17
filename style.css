@@ -1,0 +1,219 @@
+/* Reset and body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: rgb(255, 27, 27);
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: #222;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Category Sections */
+.category {
+    padding: 40px;
+    text-align: center;
+}
+
+.category h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+/* Movie Cards Container */
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Movie Card */
+.movie-card {
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    transition: transform 0.3s ease;
+    position: relative;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.movie-card p {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.hover-info {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+
+.movie-card:hover .hover-info {
+    display: block;
+}
+
+/* Play Movie Button */
+.play-button {
+    background-color: #ffcc00;
+    color: #111;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: #e6b800;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #222;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal-content video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Ensure modal styles support YouTube iframe */
+.modal-content iframe {
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/*  Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .movie-card {
+        width: 90%; /* make cards fit nicely on tablets & small screens */
+    }
+
+    .movie-card img {
+        height: auto;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .category h2 {
+        font-size: 24px;
+    }
+
+    .movie-card h3 {
+        font-size: 18px;
+    }
+
+    .movie-card p {
+        font-size: 14px;
+    }
+}
